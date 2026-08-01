@@ -18,7 +18,7 @@ class HandleAppearance
     {
         $appearance = $request->cookie('appearance');
 
-        if (! in_array($appearance, ['light', 'dark', 'system'], true)) {
+        if (! in_array($appearance, ['dark', 'light', 'system'], true)) {
             $appearance = 'system';
         }
 
