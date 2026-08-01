@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         return Inertia::render('dashboard', [
-            'parking' => Product::query()->latest()->get(),
+            'parking' => Product::query()->latest()->get(), 
         ]);
     }
 
@@ -33,8 +33,10 @@ class ProductController extends Controller
     {
         $data = $request->validate([
             'student' => ['required', 'string', 'max:255'],
-            'license plate' => ['required', 'string', 'max:255'],
+            'id' => ['required', 'string', 'max:255'],
+            'license_plate' => ['required', 'string', 'max:255'],
             'vehicle' => ['required', 'string', 'max:255'],
+            'vehicle_type_id' => ['required', 'string', 'max:255'],
         ]
         );
 
@@ -66,8 +68,10 @@ class ProductController extends Controller
     {
         $data = $request->validate([
             'student' => ['required', 'string', 'max:255'],
+            'id' => ['required', 'string', 'max:255'],
             'license plate' => ['required', 'string', 'max:255'],
             'vehicle' => ['required', 'string', 'max:255'],
+            'vehicle_type_id' => ['required', 'string', 'max:255'],
         ]
         );
 

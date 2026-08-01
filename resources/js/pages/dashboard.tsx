@@ -7,7 +7,7 @@ import { dashboard } from '@/routes';
 import { useForm } from '@inertiajs/react';
 
 export default function Dashboard() {
-    const form = useForm({student: "", 'license plate': "", vehicle: ""});
+    const form = useForm({student: "", id: "", 'license_plate': "", vehicle: "", 'vehicle_type_id': ""});
 
     function submit(event: React.FormEvent<HTMLFormElement>) {  
         event.preventDefault();
@@ -40,19 +40,19 @@ export default function Dashboard() {
                         <div className="space-y-2">
                             <Label htmlFor="license">License</Label>
                             <Input
-                                id="license plate"
-                                value={form.data['license plate']}
-                                onChange={(event) => form.setData('license plate', event.target.value)}
+                                id="license_plate"
+                                value={form.data['license_plate']}
+                                onChange={(event) => form.setData('license_plate', event.target.value)}
                             />
                         </div>
                         <div className="space-y-2">
-                        <label htmlFor="vehicle">Vehicle</label>
+                        <label htmlFor="vehicle_type_id">Vehicle Type</label>
                         <Input
-                            id="vehicle"
-                            value={form.data.vehicle}
-                            onChange={(event) => form.setData('vehicle', event.target.value)}
+                            id="vehicle_type_id"
+                            value={form.data['vehicle_type_id']}
+                            onChange={(event) => form.setData('vehicle_type_id', event.target.value)}
                         />
-                        {form.errors.vehicle && <p className="text-sm text-red-600">{form.errors.vehicle}</p>}          
+                        {form.errors.vehicle_type_id && <p className="text-sm text-red-600">{form.errors.vehicle_type_id}</p>}          
                         </div>
                         <Button type="submit" disabled={form.processing}>
                             Save Student

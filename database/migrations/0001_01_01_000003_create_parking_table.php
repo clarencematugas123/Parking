@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('parking', function (Blueprint $table) {
             $table->id();
             $table->string('student');
+            $table->string('id');
             $table->text('license_plate')->nullable();
             $table->unsignedBigInteger('vehicle_type_id');
+            $table->string('vehicle', 255);
             $table->timestamps();
         });
     }
